@@ -44,13 +44,13 @@ summary(out, burn=0.3)
 
 agp.pred <- predict.addGP(out, x.test=x.test, burn=0.3, nsamp=200, fsamp=TRUE)
 agp.rmse <- rmse(ytst, rowMeans(agp.pred$f.samp))
-plot(ytst, rowMeans(agp.pred$f.samp), xlab = "y.pred", ylab = "y.true", main = paste("rmse = ", round(agp.rmse, 2)))
+plot(ytst, rowMeans(agp.pred$f.samp), xlab = "y.true", ylab = "y.pred", main = paste("rmse = ", round(agp.rmse, 2)))
 abline(0,1, col = "red", lwd = 2)
 # plot(out$var.p, ty = "h", xlab = "predictor", ylab = "propensity score")
 
 par(mfrow = c(1,2), mar = rep(5,5,4,2))
 plot(agp.pred$sig2, ty = "l", xlab = "Thinned iterations", ylab = "sigSq")
-plot(rowSums(o2$active.store), ty = "l", xlab = "MCMC iteration", ylab = "# active components")
+plot(rowSums(out$active.store), ty = "l", xlab = "MCMC iteration", ylab = "# active components")
 
 
 ###
