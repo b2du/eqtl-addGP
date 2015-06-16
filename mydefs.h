@@ -1,0 +1,15 @@
+double *vect(int n);
+int *ivect(int n);
+double **mymatrix(int nr, int nc);
+void Rprintvec(char *a, char *format, double *x, int n);
+void Rprintmat(char *a, char *format, double **x, int m, int n, int flip);
+void Rprintveci(char *a, char *format, int *x, int n);
+double sumsquares(double *x, int n);
+double inprod(double *x, double *y, int n);
+double rnormtrunc(double mu, double sigma, double lo, double hi);
+double vmax(double *x, int n);
+double logsum(double *lx, int n);
+double sum(double *x, int n);
+int isum(int *x, int n);
+int rdraw(int n, double *lprob, int inlog);
+void locator_string(int *ix, int n, char *a);
